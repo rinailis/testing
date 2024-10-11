@@ -5,7 +5,7 @@ context("Login", () => {
       // it("login", () => {
       cy.get("#user-name").type("standard_user");
       cy.get("#password").type("secret_sauce");
-      cy.get("form").submit();
+      cy.get("#login-button").click();
 
       // Проверка, что пользователь успешно авторизован
       cy.url().should("include", "/inventory.html");
