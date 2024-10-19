@@ -1,5 +1,5 @@
-context("Wilddberris", () => {
-  describe("Wildberries Shopping Test", () => {
+context("Butter", () => {
+  describe("Butter Test", () => {
     before(() => {
       cy.visit("https://test2.itroom18.ru/");
 
@@ -46,7 +46,7 @@ context("Wilddberris", () => {
         .first()
         .find(".like")
         .should("have.class", "like-active");
-        
+
       cy.get(".blogs_card")
         .first()
         .find(".like")
