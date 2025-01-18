@@ -1,10 +1,10 @@
 <?php
 require_once 'model.php';
-// Создаем экземпляр Auth
+
 $pdo = new PDO('mysql:host=localhost;dbname=testing', 'root', '');
 $auth = new Auth($pdo);
 
-// Обработка формы регистрации
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
