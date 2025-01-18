@@ -3,19 +3,19 @@
 class Auth {
     private $pdo;
 
-    // Конструктор класса, который принимает объект PDO
+
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
-    // Проверка существования пользователя в базе данных
+
     private function userExists($username) {
         $stmt = $this->pdo->prepare('SELECT COUNT(*) FROM users WHERE username = :username');
         $stmt->execute(['username' => $username]);
         return $stmt->fetchColumn() > 0;
     }
 
-    // Регистрация нового пользователя
+
     public function register($username, $password) {
         if ($this->userExists($username)) {
             return false; // Пользователь уже существует
@@ -30,7 +30,7 @@ class Auth {
         return true;
     }
 
-    // Аутентификация пользователя
+
     public function login($username, $password) {
         if (!$this->userExists($username)) {
             return false; // Пользователь не существует
